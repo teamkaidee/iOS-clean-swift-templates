@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file
 
+## 3.1.1
+
+- Hotfix: rollback setup, use force unwrap instead.
+
 ## 3.1.0
 
 - Reduce setup steps. By always initial at variables
