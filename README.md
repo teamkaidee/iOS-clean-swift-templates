@@ -2,7 +2,7 @@
 
 [![clean-swift](https://github.com/motojojoe/assets/blob/master/CleanSwift.png?raw=true)](http://clean-swift.com)
 
-**Refactor** templates clean swift v3.0.3 conform The Official raywenderlich.com [Swift Style Guide](https://github.com/raywenderlich/swift-style-guide).
+**Refactor** templates clean swift conform The Official raywenderlich.com [Swift Style Guide](https://github.com/raywenderlich/swift-style-guide).
 
 Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
 

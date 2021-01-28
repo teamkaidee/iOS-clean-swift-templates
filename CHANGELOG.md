@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file
 
+## 3.1.0
+
+- Reduce setup steps. By always initial at variables
+- Remove optional when it no need
+- Remove `import UIKit` from worker, it should not use
+- Remove `import UIKit` from the view model, it may not use
+- Remove `MARK: Use cases` from the view model
+- Remove router part from view controller. We do not prefer to use segue
+- `MARK: Do something` to `MARK: - Actions`
+- Remove `MARK: Do something` in the presenter
+- `MARK: Setup` to `MARK: - Setup` and move to the above view controller constructor. It should not belong in the constructor function
+- Move `IBOutlet` above everything, we are following the below order.
+  1. Interface
+  1. Outlets
+  1. Local variables
+  1. Initializations
+  1. Object lift cycles
+  1. Actions
+- Remove white space in empty line
+- Remove `tearDown()` from tests
+- Remove `UIWindow` from tests, just call `_ = sut.view` is faster like a thousand times in unit testing. Except we want to working on some UI interaction.
+- Remove NSObjectProtocol, @objc, NSObject, since it no use with Objective-C and Segue
+- Separate presentation logic spy to file
+- Separate business logic spy to file
+- Separate display logic spy to file
+- Pull request [#2](https://github.com/teamkaidee/iOS-clean-swift-templates/pull/2)
+
 ## 3.0.3
 
 - No comment in the head of the file
