@@ -7,8 +7,8 @@ protocol ___VARIABLE_sceneName___DisplayLogic: class {
 class ___VARIABLE_sceneName___ViewController: UITableViewController, ___VARIABLE_sceneName___DisplayLogic {
   //@IBOutlet weak var nameTextField: UITextField!
 
-  var interactor: ___VARIABLE_sceneName___BusinessLogic = ___VARIABLE_sceneName___Interactor()
-  var router: (___VARIABLE_sceneName___RoutingLogic & ___VARIABLE_sceneName___DataPassing) = ___VARIABLE_sceneName___Router()
+  var interactor: ___VARIABLE_sceneName___BusinessLogic!
+  var router: (___VARIABLE_sceneName___RoutingLogic & ___VARIABLE_sceneName___DataPassing)!
 
   // MARK: - Setup
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -22,8 +22,15 @@ class ___VARIABLE_sceneName___ViewController: UITableViewController, ___VARIABLE
   }
 
   private func setup() {
-    interactor.presenter.viewController = self
-    router.viewController = self
+    let viewController = self
+    let interactor = ___VARIABLE_sceneName___Interactor()
+    let presenter = ___VARIABLE_sceneName___Presenter()
+    let router = ___VARIABLE_sceneName___Router()
+    viewController.interactor = interactor
+    viewController.router = router
+    interactor.presenter = presenter
+    presenter.viewController = viewController
+    router.viewController = viewController
     router.dataStore = interactor
   }
 
