@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file
 
+## 3.0.3
+
+- No comment in the head of the file
+
 ## 3.0.2
 
 - Fixed @testable import for project names containing spaces
