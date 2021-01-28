@@ -1,5 +1,3 @@
-import UIKit
-
 protocol ___VARIABLE_sceneName___BusinessLogic {
   func doSomething(request: ___VARIABLE_sceneName___.Something.Request)
 }
@@ -9,17 +7,14 @@ protocol ___VARIABLE_sceneName___DataStore {
 }
 
 class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
-  var presenter: ___VARIABLE_sceneName___PresentationLogic?
-  var worker: ___VARIABLE_sceneName___Worker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
+  var presenter: ___VARIABLE_sceneName___PresentationLogic = ___VARIABLE_sceneName___Presenter()
+  var worker: ___VARIABLE_sceneName___Worker = ___VARIABLE_sceneName___Worker()
+  //var name = ""
+
   func doSomething(request: ___VARIABLE_sceneName___.Something.Request) {
-    worker = ___VARIABLE_sceneName___Worker()
-    worker?.doSomeWork()
-    
+    worker.doSomeWork()
+
     let response = ___VARIABLE_sceneName___.Something.Response()
-    presenter?.presentSomething(response: response)
+    presenter.presentSomething(response: response)
   }
 }
